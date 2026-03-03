@@ -2,7 +2,7 @@
 
 **Privileged Account Password Reuse Detector**
 
-Identifies privileged Active Directory accounts sharing password hashes with non-privileged accounts in NTDS.dit dumps - highlighting critical privilege escalation risks during security assessments.
+Identifies privileged Active Directory accounts sharing password hashes with non-privileged accounts in NTDS.dit dumps,
 
 ```
     ____       _     ________              __  
