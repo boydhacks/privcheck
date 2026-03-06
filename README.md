@@ -48,7 +48,7 @@ python3 privcheck.py -h
 
 **Requirements:** Python 3.6+
 
-No external dependencies required - uses only Python standard library.
+No external dependencies required, uses only Python standard library.
 
 ## Usage
 
@@ -167,27 +167,6 @@ Summary:
   Unique hashes identified: 3
 ```
 
-## Use Cases
-
-### Penetration Testing
-- Identify quick privilege escalation paths
-- Demonstrate password policy weaknesses
-- Generate findings for client reports
-
-### Active Directory Security Audits
-- Validate privileged account isolation
-- Verify password uniqueness requirements
-- Assess domain security posture
-
-### Red Team Operations
-- Prioritize credential targets
-- Map escalation paths
-- Explore additional attack chains
-
-## Obtaining NTDS.dit Dumps
-
-### Using secretsdump.py (Impacket)
-
 ```bash
 # From a domain-joined machine with credentials
 secretsdump.py DOMAIN/user:password@DC_IP -just-dc-ntlm
@@ -242,7 +221,7 @@ $groups | ForEach-Object { Get-ADGroupMember $_ } |
 
 ### Manual Creation
 
-Don't forget to include:
+Ideas of accounts to audit:
 - Built-in Administrator account
 - Service accounts with admin privileges
 - Backup/recovery accounts
@@ -262,18 +241,6 @@ Perfect for:
 - Internal documentation
 - Compliance reporting
 - Knowledge base articles
-
-## Security Considerations
-
-⚠️ **CRITICAL - READ BEFORE USE:**
-
-- **Authorized Testing Only**: Use only on systems you have explicit written permission to test
-- **Handle Data Securely**: NTDS dumps contain highly sensitive credential material
-- **Secure Storage**: Encrypt dumps at rest and in transit
-- **Secure Deletion**: Securely wipe dumps after testing (e.g., `shred -vfz -n 10 ntds_dump.txt`)
-- **Client Confidentiality**: Sanitize all reports before sharing outside authorized channels
-- **Need-to-Know**: Limit access to dumps and results to essential personnel only
-- **Logging**: Consider operational security when running on client networks
 
 ## Tips & Best Practices
 
@@ -316,15 +283,6 @@ The "Grouped Account List" section is specifically designed for copy/paste into 
 - Ensure terminal supports ANSI colors
 - Use `-o` output file for colorless text
 - Try different terminal emulator
-
-## Contributing
-
-Contributions welcome! Areas for improvement:
-- Additional output formats (CSV, JSON, HTML)
-- Integration with password cracking tools
-- Statistical analysis features
-- Machine account filtering options
-- Disabled account detection
 
 ## License
 
